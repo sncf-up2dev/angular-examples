@@ -1,0 +1,15 @@
+<div [style.font-size.px]="size"> {{description}} </div>
+
+<div [class]="classObject"> Classe avec un objet </div>
+
+<div [class]="classeArray"> Classe avec un tableau </div>
+
+<div [class]="classeString"> Classe avec un string :
+    <input #classe [(ngModel)]="classeString" />
+</div>
+
+<div [style]="styleObject"> Style avec un objet </div>
+
+<div [style]="styleString"> Style avec un string :
+    <input #style [(ngModel)]="styleString" />
+</div>

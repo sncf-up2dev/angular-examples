@@ -1,0 +1,6 @@
+<div>
+    <div>Cle : <input #cle /> Valeur : <input #valeur /> </div>
+    <button (click)="addStyle(cle.value, valeur.value)">Ajouter</button><button (click)="refresh()">Mise à jour</button>
+</div>
+
+<div [style]="styles">Texte avec mon style</div>
