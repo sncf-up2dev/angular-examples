@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+input,
+button {
+    font-size: 40px;
+}
+
+input {
+    margin-bottom: 5px;
+}
+
+button {
+    margin-right: 5px;
+}
+
+div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.border {
+    border: 5px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.shared {
+    color: yellow;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 40px;
+}
