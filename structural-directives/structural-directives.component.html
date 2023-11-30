@@ -1,0 +1,24 @@
+<div class="border">Hip, <div *ngIf="condition">Hip,</div> Hip, Houra</div>
+<div class="border">Hip, <ng-container *ngIf="condition">Hip,</ng-container> Hip, Houra</div>
+<div class="border">Hip, <ng-container>Hip,</ng-container> Hip, <ng-template *ngIf="condition">Houra</ng-template></div>
+
+<div class="border">
+    <div class="border" *ngIf="numbers.length else empty">
+        [
+        <ng-container [class.red]="o" *ngFor="let item of numbers; let l=last; odd as o">
+            {{ item }} <ng-container *ngIf="o">(odd)</ng-container><ng-container *ngIf="!l">,</ng-container>
+        </ng-container>
+        ]
+    </div>
+    <div>
+        <button (click)="push()">Push</button>
+        <button (click)="pop()">Pop</button>
+        <button (click)="addToLastElement()">Increment</button>
+    </div>
+</div>
+
+<ng-template #empty>
+    <div class="border">
+        La liste est vide
+    </div>
+</ng-template>
