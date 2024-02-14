@@ -25,6 +25,14 @@ div {
     margin-bottom: 10px;
 }
 
+.component-border {
+    display: block;
+    border: 5px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
 .shared {
     color: yellow;
 }
