@@ -13,10 +13,12 @@ import { ObservableComponent } from './observables/observable.component';
 import { HttpTypeComponent } from './observables/http-client-type/http-type.component';
 import { provideHttpClient } from '@angular/common/http';
 import { FromEventComponent } from './observables/from-event/from-event.component';
+import { SubjectComponent } from './observables/subject/subject.component';
+import { ReactiveCounterComponent } from './observables/reactive-counter/reactive-counter.component';
 
-bootstrapApplication(FromEventComponent, {
+bootstrapApplication(ReactiveCounterComponent, {
     providers: [
         provideHttpClient()
     ]
 }).catch((err) => console.error(err));
-//platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err));
+//platformBrowserDynamic().bootstrapModule(AppModuReactiveCounterServicele).catch(err => console.error(err));

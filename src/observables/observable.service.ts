@@ -1,37 +1,43 @@
 import { Injectable } from "@angular/core";
-import { Observable, interval, Observer, Subscription, PartialObserver, of, from, timer } from "rxjs";
+import { Observable, interval, Observer, Subscription, PartialObserver, of, from, timer, Subject } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
 export class ObservableService {
 
+    id = 0
     coldObservable$: Observable<number> = new Observable((subscriber) => {
         let i = 0
 
-        subscriber.next(i++)
-        subscriber.next(i++)
+        let id = this.id
+        this.id++
+
+        console.log(`(${id} - cold) : Début de l'émission`)
         subscriber.next(i++)
         let intervalId = setInterval(() => {
+            console.log(`(${id} - cold) : Emission d'une valeur : ${i}`)
             subscriber.next(i++)
         }, 1000);
         return () => {
-            console.log("Teardown")
+            console.log(`(${id} - cold) : Fin de l'émission`)
             clearInterval(intervalId)
         }
     })
 
     i = 0
-
     hotObservable$: Observable<number> = new Observable((subscriber) => {
-        subscriber.next(this.i++)
-        subscriber.next(this.i++)
+        let id = this.id
+        this.id++
+
+        console.log(`(${id} - hot) : Début de l'émission`)
         subscriber.next(this.i++)
         let intervalId = setInterval(() => {
+            console.log(`(${id}- hot) : Emission d'une valeur : ${this.i}`)
             subscriber.next(this.i++)
         }, 1000);
         return () => {
-            console.log("Teardown")
+            console.log(`(${id}- hot) : Fin de l'émission`)
             clearInterval(intervalId)
         }
     })
@@ -47,7 +53,6 @@ export class ObservableService {
     subscription: Subscription = this.coldObservable$.subscribe(this.observer)
 
     constructor() {
-        console.log("Constructeur")
     }
 
     resubscribe() {

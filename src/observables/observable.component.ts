@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { Observable, Observer, interval } from 'rxjs';
+import { Component, OnDestroy, inject } from '@angular/core';
 import { ObservableService } from './observable.service';
 import { CommonModule } from '@angular/common';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
